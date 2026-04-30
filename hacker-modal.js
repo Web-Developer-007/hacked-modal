@@ -10,7 +10,7 @@ const images = settings.images || [
 ];
 
 const storageKey = "hacker_modal_closed_at";
-const twentyFourHours = 1 * 60 * 60 * 1000;
+const twentyFourHours = 600000;
 
 function shouldShowModal() {
 const closedAt = localStorage.getItem(storageKey);
@@ -179,7 +179,31 @@ transition: 0.25s ease;
 background: #8dffb3;
 transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+    #hackerModalExternal .hacker-modal {
+        padding: 24px 18px;
+    }
 
+    #hackerModalExternal .glitch-title {
+        font-size: 24px;
+    }
+
+    #hackerModalExternal .terminal-box {
+        font-size: 16px;
+    }
+
+    #hackerModalExternal .hack-images {
+        grid-template-columns: 1fr;
+    }
+
+    #hackerModalExternal .hack-images img {
+        height: 180px;
+    }
+
+    #hackerModalExternal .hack-images img:hover {
+        transform: scale(1.05);
+    }
+}
 @keyframes hackerFlicker {
 0%, 100% { opacity: 1; }
 45% { opacity: 0.75; }
