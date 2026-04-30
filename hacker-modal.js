@@ -211,7 +211,22 @@ transform: translateY(-2px);
 55% { opacity: 0.55; }
 60% { opacity: 1; }
 }
+@keyframes skullRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
+.hacking-animation {
+    font-size: 60px;
+    color: #00ff66;  /* Green color */
+    animation: skullRotate 2s infinite linear;
+    display: inline-block;
+    text-align: center;
+}
 @media (max-width: 768px) {
 #hackerModalExternal .hacker-modal {
 padding: 24px 18px;
@@ -265,13 +280,14 @@ modal.innerHTML = `
   </div>
 
   <div class="hack-images">
-    ${images
-    .slice(0, 3)
-    .map(function (img, index) {
-    return `<img src="${img}" alt="Hack Image ${index + 1}">`;
-    })
-    .join("")}
-  </div>
+    ${images && images.length > 0
+        ? images.map(function (img, index) {
+            return `<img src="${img}" alt="Hack Image ${index + 1}">`;
+        }).join("")
+        : '<div class="hacking-animation">
+    💀 <!-- Skull emoji -->
+</div>'}  <!-- Default hacking animation if no images -->
+</div>
 
   <button class="understand-btn" type="button">
     আমি বুঝেছি
@@ -295,3 +311,7 @@ document.addEventListener("DOMContentLoaded", createModal);
 createModal();
 }
 })();
+
+setTimeout(function () {
+    closeModalFor24Hours();  // ৫ সেকেন্ড পর পপ-আপ বন্ধ হবে
+}, 5000);  // 5000 মিলিসেকেন্ড = 5 সেকেন্ড
