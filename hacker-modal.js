@@ -10,7 +10,7 @@ const images = settings.images || [
 ];
 
 const storageKey = "hacker_modal_closed_at";
-const twentyFourHours = 24 * 60 * 60 * 1000;
+const twentyFourHours = 1 * 60 * 60 * 1000;
 
 function shouldShowModal() {
 const closedAt = localStorage.getItem(storageKey);
