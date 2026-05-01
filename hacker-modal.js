@@ -284,9 +284,7 @@ modal.innerHTML = `
         ? images.map(function (img, index) {
             return `<img src="${img}" alt="Hack Image ${index + 1}">`;
         }).join("")
-        : '<div class="hacking-animation">
-    💀 <!-- Skull emoji -->
-</div>'}  <!-- Default hacking animation if no images -->
+        : '<div class="hacking-animation">💀 <!-- Skull emoji --></div>'}  <!-- Default hacking animation if no images -->
 </div>
 
   <button class="understand-btn" type="button">
