@@ -4,9 +4,6 @@ const settings = window.HackerModalSettings || {};
 const telegram = settings.telegram || "@devxxx";
 
 const images = settings.images || [
-"/1.png",
-"/2.png",
-"/3.png"
 ];
 
 const storageKey = "hacker_modal_closed_at";
